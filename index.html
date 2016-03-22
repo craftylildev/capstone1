@@ -9,14 +9,9 @@
 
   <div ng-app="VehicleApp">
     <div ng-controller="PageCtrl" class="container">
-      <div ng-include="'partials/nav.html'"></div>
-      <div class="row">
-          <div class="col-sm-12">
 
-            <div ng-view></div>
+      <div ng-view></div>
 
-          </div>
-      </div>
     </div>
   </div>
 
@@ -29,6 +24,10 @@
   <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
 
   <script src="app/app.js"></script>
+  <script src="app/controllers/LoginCtrl.js"></script>
+  <script src="app/controllers/PageCtrl.js"></script>
+  <script src="app/factories/authFactory.js"></script>
+  <script src="app/factories/FirebaseFactory.js"></script>
 
 </body>
 </html>

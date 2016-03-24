@@ -3,34 +3,17 @@
 
 <div class="row">
   <div class="col-sm-12">
-
+  
     <div class="row">
+
       <!-- ADD NEW VEHICLE or SELECT EXISTING VEHICLE -->
       <div class="col-sm-3">
-        <div class="btn-add-vehicle">
-          <a href="#" title="Add Vehicle">Add Vehicle</a>
-        </div>                
-        <div class="vehicle-list">
-          <ul>
-            <li><a href="#" title="vehicle-title">vehicle-title</a></li>
-          </ul>  
-        </div>
+        <div ng-include="'partials/vehicle-add.html'"></div>
       </div>
+
       <!-- DISPLAY VEHICLE AND MAINTENANCE SCHEDULE -->
       <div class="col-sm-8 col-sm-offset-1">
-        <div class="vehicle-display">
-          <a href="#" class="vehicle-delete">Delete Vehicle</a>
-          <h1 class="vehicle-title">vehicle title</h1>
-          <input type="text" class="form-control" autofocus="true" placeholder="Enter Current Mileage">
-          <div class="maintenance-list">
-          <ul>
-            <li>
-              maintenance list item
-            </li>
-          </ul>
-          </div>
-
-        </div>
+        <div ng-include="'partials/vehicle-details.html'"></div>
       </div>
 
     </div>

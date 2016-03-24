@@ -22,6 +22,7 @@ app.config(["$routeProvider",
     $routeProvider.
       when("/", {
         templateUrl: "partials/display.html",
+        controller: "VehAddCtrl",
         resolve: { isAuth }
       }).
       when("/login", {

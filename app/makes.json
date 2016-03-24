@@ -1,0 +1,20 @@
+{
+  "vehicle": {
+    "uid": "",
+    "vehicleKey": "",
+    "year": 0,
+    "make": "",
+    "model": "",
+    "modelYearID": 0,
+    "currentMileage": 0
+  },
+  "maintenance": {
+    "uid": "",
+    "vehicleKey": "",
+    "modelYearID": 0,
+    "maintenanceID": 0,
+    "action": "",
+    "item": "",
+    "intervalMileage": 0
+  }
+}

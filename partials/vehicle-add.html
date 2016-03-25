@@ -2,37 +2,33 @@
 
   <div class="vehicle-drop-down">
     <label>Add Vehicle:</label>
+    <br>
+
     <select ng-model="selectedMake" 
-            ng-options="carMakes.name for carMakes in carMakes track by carMakes.name"
-            ng-change="buildModels(selectedMake)";
+            ng-options="carMakes.name for carMakes in carMakes"
+            ng-change="buildModels(selectedMake)"
             class="vehicle-drop-down-item"
             size="1">
             <option disabled value="">Make</option>
     </select>
-
-
-<!--    <select ng-model="selectedModel" 
-            ng-options="model for makeModels"
+<br>
+   <select ng-model="selectedModel" 
+            ng-options="carModels.name for carModels in carModels"
             ng-change="buildYears(selectedModel)"
             class="vehicle-drop-down-item"
             size="1">
             <option disabled value="">Model</option>
-    </select> -->
-
-    <!-- <select ng-model="userYear" 
-            ng-options="year for modelYears"
+    </select>
+<br>
+    <select ng-model="selectedYear" 
+            ng-options="carYears.year for carYears in carYears"
+            ng-change="getVehicle(selectedYear)"
             class="vehicle-drop-down-item"
             size="1">
             <option disabled value="">Year</option>
-    </select> -->
+    </select>
   </div>
-  
-  <div>
-    Selected Make: {{userMake}}<br>
-    Selected Model: {{userModel}}<br>
-    Selected Year: {{userYear}}
-  </div>
-
+<br>
   <button ng-click="vehicleAdd()">Add Vehicle</button>
 
 </div>                

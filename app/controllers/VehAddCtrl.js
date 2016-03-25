@@ -9,8 +9,9 @@ app.controller("VehAddCtrl", [
   "firebaseURL",
   "VehicleFactory",
   "FirebaseFactory",
+  "MaintenanceFactory",
 
-  function ($scope, $location, $http, authFactory, firebaseURL, VehicleFactory, FirebaseFactory) {
+  function ($scope, $location, $http, authFactory, firebaseURL, VehicleFactory, FirebaseFactory, MaintenanceFactory) {
 
     $scope.carMakes = [];
     $scope.carModels = [];
@@ -29,7 +30,7 @@ app.controller("VehAddCtrl", [
 
     $scope.userVehicleList = [];
 
-    VehicleFactory().then(
+    VehicleFactory.getVehicle().then(
       vehicleCollection => {
         // console.log("vehicleCollection", vehicleCollection);
         getMakes(vehicleCollection);
@@ -50,12 +51,12 @@ app.controller("VehAddCtrl", [
         function populateVehiclelList () {
           FirebaseFactory()
           .then(        
-              userVehicles => {
-                console.log("userVehicles", userVehicles);
-                  Object.keys(userVehicles).forEach(key => {
-                    userVehicles[key].id = key;
-                    $scope.userVehicleList.push(userVehicles[key]);
-                  });
+            userVehicles => {
+              console.log("userVehicles", userVehicles);
+                Object.keys(userVehicles).forEach(key => {
+                  userVehicles[key].id = key;
+                  $scope.userVehicleList.push(userVehicles[key]);
+                });
             }
           )
         }
@@ -117,6 +118,7 @@ app.controller("VehAddCtrl", [
               $scope.selectedYearObject = modelYears[i].year;
                   $scope.newVehicle.vehicleYear = vehicleYear;
                   $scope.newVehicle.vehicleKey = vehicleKey;
+                  VehicleFactory.setVehicleKey(vehicleKey);
                   // console.log("vehicleYear", vehicleKey);
                   // console.log("vehicleKey", vehicleKey);
                   // console.log("selectedYear", selectedYear);
@@ -151,6 +153,11 @@ app.controller("VehAddCtrl", [
         }; // end vehicleAdd
 
     }); // end VehicleFactory
+
+
+    // console.log("MaintenanceFactory", MaintenanceFactory());
+
+
 
   } // end main function
 

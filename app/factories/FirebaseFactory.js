@@ -1,19 +1,15 @@
 "use strict";
-
-// Returning a promise of the user movie data
-app.factory("FirebaseFactory", ($q, $http) =>
-  () =>
-    $q((resolve, reject) => // Return a promise for our async XHR
+// Returning a promise of the user vehicle data
+app.factory("FirebaseFactory", function ($q, $http, firebaseURL, authFactory) { 
+  return () => {
+    let user = authFactory.getUser();
+    return $q((resolve, reject) => // Return a promise for our async XHR
       $http
-        .get("https://solima-capstone-1.firebaseio.com/vehicle.json")
+        .get(`${firebaseURL}/vehicle.json?orderBy="uid"&equalTo="${user.uid}"`) 
         .success(
-          userCollection => {
-            for (let key in userCollection){
-              userCollection[key].id = key;
-            }
-            resolve(userCollection)
-          },
+          userVehicles => resolve(userVehicles),
           error => reject(error)
         )
     )
-);
+  }
+});

@@ -37,15 +37,12 @@
 
 <div class="vehicle-list">
   <label>Select Vehicle:</label>
-  <div ng-if="!" class="">Please Select A Vehicle</div>
-  <div ng-if="">
+  <!-- <div ng-if="!" class="">(Please Select A Vehicle)</div>
+   <div ng-if="">-->
     <ul>
-      <li>
-        <a href="#" title="vehicle-title">vehicle-title</a>
-      </li>
-      <li>
-        <a href="#" title="vehicle-title">vehicle-title</a>
+      <li ng-repeat="car in userVehicleList">
+        <a href="#" title="{{car.vehicleYear}} {{car.vehicleMake}} {{car.vehicleModel}}">{{car.vehicleYear}} {{car.vehicleMake}} {{car.vehicleModel}}</a>
       </li>
     </ul>  
-  </div>
+  <!-- </div> -->
 </div>

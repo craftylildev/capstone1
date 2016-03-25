@@ -2,6 +2,7 @@
 
 app.factory("authFactory", (firebaseURL) => {
   let ref = new Firebase(firebaseURL);
+  let currentUserData = null;
 
   return {
     /*
@@ -11,10 +12,15 @@ app.factory("authFactory", (firebaseURL) => {
       let authData = ref.getAuth();
 
       if (authData) {
+        currentUserData = authData;
         return true;
       } else {
         return false;
       }
+    },
+
+    getUser () {
+      return currentUserData;
     },
     /*
       Authenticate the client via Firebase

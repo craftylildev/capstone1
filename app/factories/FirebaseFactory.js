@@ -5,7 +5,7 @@ app.factory("FirebaseFactory", ($q, $http) =>
   () =>
     $q((resolve, reject) => // Return a promise for our async XHR
       $http
-        .get("https://solima-capstone-1.firebaseio.com/data.json")
+        .get("https://solima-capstone-1.firebaseio.com/vehicle.json")
         .success(
           userCollection => {
             for (let key in userCollection){

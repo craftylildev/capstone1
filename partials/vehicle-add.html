@@ -38,7 +38,7 @@
 <div class="vehicle-list">
     <ul>
       <li ng-repeat="car in userVehicleList">
-        <a href="#" title="{{car.vehicleYear}} {{car.vehicleMake}} {{car.vehicleModel}}">{{car.vehicleYear}} {{car.vehicleMake}} {{car.vehicleModel}}</a>
+        <button ng-click="goToVehicle()">{{car.vehicleYear}} {{car.vehicleMake}} {{car.vehicleModel}}</button>
       </li>
     </ul>  
 </div>

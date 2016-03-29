@@ -52,7 +52,7 @@ app.controller("VehAddCtrl", [
           FirebaseFactory()
           .then(        
             userVehicles => {
-              console.log("userVehicles", userVehicles);
+              // console.log("userVehicles", userVehicles);
                 Object.keys(userVehicles).forEach(key => {
                   userVehicles[key].id = key;
                   $scope.userVehicleList.push(userVehicles[key]);

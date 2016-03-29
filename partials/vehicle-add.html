@@ -35,10 +35,11 @@
 
 <hr>
 
+
 <div class="vehicle-list">
     <ul>
       <li ng-repeat="car in userVehicleList">
-        <button ng-click="goToVehicle()">{{car.vehicleYear}} {{car.vehicleMake}} {{car.vehicleModel}}</button>
+        <button ng-click="goToVehicle(car.vehicleKey, car)">{{car.vehicleYear}} {{car.vehicleMake}} {{car.vehicleModel}}</button>
       </li>
     </ul>  
 </div>

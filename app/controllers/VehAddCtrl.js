@@ -35,8 +35,17 @@ app.controller("VehAddCtrl", [
         // console.log("vehicleCollection", vehicleCollection);
         getMakes(vehicleCollection);
         populateVehiclelList();
-        $scope.api = vehicleCollection;
 
+        // reset drop down filters
+        $scope.dropdownReset = function () {
+        // function dropdownReset () {
+            $scope.carMakes = [];
+            $scope.carModels = [];
+            $scope.carYears = [];
+            getMakes(vehicleCollection);
+        } // end reset drop down filters
+
+        $scope.api = vehicleCollection;
         // populate MAKE dropdown     
         function getMakes(api) {
           for (var i in api) {
@@ -49,6 +58,7 @@ app.controller("VehAddCtrl", [
         }; // end getMakes
 
         function populateVehiclelList () {
+          $scope.userVehicleList = [];
           FirebaseFactory()
           .then(        
             userVehicles => {
@@ -64,45 +74,52 @@ app.controller("VehAddCtrl", [
         //Loop through all MAKES and only display the MODELS that match the user-selected MAKE
         $scope.buildModels = function (selectedMake) {
           // console.log("selectedMake", selectedMake);
-          var api = vehicleCollection;
-          for (var i in api) {
-            var makes = api[i];
-            for (var j in makes) {
-              // get MODEL object that matches MAKE selected
-              if (selectedMake.name == makes[j].name) {
-                $scope.selectedMakeObject = makes[j].models;
-                      // console.log("selectedMake", selectedMake);
-                      $scope.newVehicle.vehicleMake = selectedMake.name;
-                      // console.log("$scope.selectedMakeObject", $scope.selectedMakeObject);
-                for (var k in $scope.selectedMakeObject) {
-                  var modelName = $scope.selectedMakeObject[k].name;
-                  // populate MODEL list dropdown
-                  $scope.carModels.push({"name": modelName});
+          if (selectedMake !== null) {
+            var api = vehicleCollection;
+            for (var i in api) {
+              var makes = api[i];
+              for (var j in makes) {
+                // get MODEL object that matches MAKE selected
+                if (selectedMake.name == makes[j].name) {
+                  $scope.selectedMakeObject = makes[j].models;
+                        // console.log("selectedMake", selectedMake);
+                        $scope.newVehicle.vehicleMake = selectedMake.name;
+                        // console.log("$scope.selectedMakeObject", $scope.selectedMakeObject);
+                  for (var k in $scope.selectedMakeObject) {
+                    var modelName = $scope.selectedMakeObject[k].name;
+                    // populate MODEL list dropdown
+                    $scope.carModels.push({"name": modelName});
+                  }
                 }
               }
-            }
+            } 
+          } else {
+            return;
           }
         }; // end buildModels
 
         //Loop through all MODELS and only display the YEARS that match the user-selected MODEL
         $scope.buildYears = function (selectedModel) {
           // console.log("$scope.selectedMakeObject", $scope.selectedMakeObject);
-          var modelList = $scope.selectedMakeObject;
-          for (var i in modelList) {
-            var modelYears = modelList[i].years;
-            // get YEAR object that matches MODEL selected
-            if (selectedModel.name == modelList[i].name) {
-              $scope.selectedModelObject = modelList[i].years;
-                    // console.log("selectedModel", selectedModel);
-                    $scope.newVehicle.vehicleModel = selectedModel.name;
-
-                    // console.log("$scope.selectedModelObject", $scope.selectedModelObject);
-              for (var j in modelYears) {
-                var modelYear = $scope.selectedModelObject[j].year;
-                // populate YEAR list dropdown
-                $scope.carYears.push({"year": modelYear});
+          if (selectedModel !== null) {
+            var modelList = $scope.selectedMakeObject;
+            for (var i in modelList) {
+              var modelYears = modelList[i].years;
+              // get YEAR object that matches MODEL selected
+              if (selectedModel.name == modelList[i].name) {
+                $scope.selectedModelObject = modelList[i].years;
+                      // console.log("selectedModel", selectedModel);
+                      $scope.newVehicle.vehicleModel = selectedModel.name;
+                      // console.log("$scope.selectedModelObject", $scope.selectedModelObject);
+                for (var j in modelYears) {
+                  var modelYear = $scope.selectedModelObject[j].year;
+                  // populate YEAR list dropdown
+                  $scope.carYears.push({"year": modelYear});
+                }
               }
             }
+          } else {
+            return;
           }
         }; // end buildYears
 
@@ -137,7 +154,7 @@ app.controller("VehAddCtrl", [
             vehicleModel: $scope.newVehicle.vehicleModel,
             vehicleYear: $scope.newVehicle.vehicleYear
           };
-          console.log("newVehicle", newVehicle);
+          // console.log("newVehicle", newVehicle);
 
           // POST the vehicle to Firebase
           $http.post(`${firebaseURL}/vehicle.json`,
@@ -149,19 +166,10 @@ app.controller("VehAddCtrl", [
               populateVehiclelList();
             }
           ); 
-     
         }; // end vehicleAdd
 
     }); // end VehicleFactory
 
-
-    // console.log("MaintenanceFactory", MaintenanceFactory());
-
-
-
   } // end main function
 
 ]); // end VehAddCtrl
-
-// clear drop downs on VEHICLE ADD
-         

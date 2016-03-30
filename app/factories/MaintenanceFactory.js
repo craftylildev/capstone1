@@ -5,7 +5,7 @@ app.factory("MaintenanceFactory", ($q, $http, VehicleFactory) => {
   return (key) => {
     let vehicleKey = key;
     // let vehicleKey = VehicleFactory.getVehicleKey();
-    console.log("vehicleKey", vehicleKey);
+    // console.log("vehicleKey", vehicleKey);
     return $q((resolve, reject) => // Return a promise for our async XHR
       $http
         .get(`https://api.edmunds.com/v1/api/maintenance/actionrepository/findbymodelyearid?modelyearid=${vehicleKey}&fmt=json&api_key=knjxcgxbdwh2tvq4pf7s7srn`)

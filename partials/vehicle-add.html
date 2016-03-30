@@ -3,7 +3,6 @@
   <div class="vehicle-drop-down">
     <label>Add Vehicle:</label>
     <br>
-
     <select ng-model="selectedMake" 
             ng-options="carMakes.name for carMakes in carMakes"
             ng-change="buildModels(selectedMake)"
@@ -11,7 +10,7 @@
             size="1">
             <option disabled value="">Make</option>
     </select>
-<br>
+    <br>
    <select ng-model="selectedModel" 
             ng-options="carModels.name for carModels in carModels"
             ng-change="buildYears(selectedModel)"
@@ -19,7 +18,7 @@
             size="1">
             <option disabled value="">Model</option>
     </select>
-<br>
+    <br>
     <select ng-model="selectedYear" 
             ng-options="carYears.year for carYears in carYears"
             ng-change="getVehicle(selectedYear)"
@@ -28,18 +27,19 @@
             <option disabled value="">Year</option>
     </select>
   </div>
-<br>
+    <br>
   <button ng-click="vehicleAdd()">Add Vehicle</button>
-
+  <button ng-click="dropdownReset()">Reset</button>
 </div>                
 
 <hr>
 
-
 <div class="vehicle-list">
     <ul>
-      <li ng-repeat="car in userVehicleList">
+      <li ng-repeat="car in userVehicleList | orderBy: 'vehicleYear'">
         <button ng-click="goToVehicle(car.vehicleKey, car)">{{car.vehicleYear}} {{car.vehicleMake}} {{car.vehicleModel}}</button>
       </li>
     </ul>  
 </div>
+
+

@@ -1,14 +1,22 @@
 <div ng-controller="VehAddCtrl" class="vehicle-details">
-  <button ng-click="vehicleDelete()">Delete Vehicle</button>
-  <h1 class="vehicle-title">{{car.vehicleYear}} {{car.vehicleMake}} {{car.vehicleModel}}</h1>
-  <input type="text" class="form-control" autofocus="true" placeholder="Enter Current Mileage">
-
-  <div class="maintenance-list">
-    <ul>
-      <li ng-repeat="vehicleMainList in vehicleMainList | orderBy: 'intervalMileage'">
-        {{vehicleMainList.action}} {{vehicleMainList.item}} at {{vehicleMainList.intervalMileage}} miles
-      </li>
-    </ul>
+  
+  <!-- show on vehicle select-->
+  <div ng-if="vehicleSelected"> 
+    <button ng-click="vehicleDelete(car)">Delete Vehicle</button>
+    <h1 class="vehicle-title">{{car.vehicleYear}} {{car.vehicleMake}} {{car.vehicleModel}}</h1>
+    <!-- <input ng-model="inputMileage" type="text" class="form-control" autofocus="true" placeholder="Enter Current Mileage">
+    <button ng-click="goToVehicle(car.vehicleKey, car, inputMileage)">Search Services</button> -->
+    <div class="maintenance-list">
+      <ul>
+        <li ng-repeat="vehicleMainList in vehicleMainList | filter:mileageOverZero | orderBy:'intervalMileage'">
+          {{vehicleMainList.action}} {{vehicleMainList.item}} at {{vehicleMainList.intervalMileage}} miles
+        </li>
+      </ul>
+    </div>
   </div>
 
+  <!-- show on load or after vehicle delete-->
+  <div ng-if="!vehicleSelected">
+    <p>No vehicle selected.</p>
+  </div>
 </div>

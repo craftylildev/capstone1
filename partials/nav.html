@@ -3,7 +3,7 @@
     <img src="imgs/logo-small.jpg" alt="Logo">  
   </div>
   <div class="logoutArea">
-    <a href="#/login" ng-click="logout()" class="btn logout-btn">
+    <a href="#/login" ng-click="logout(); clearVehicleInfo()" class="btn logout-btn">
       <span ng-if="isAuthenticated()">Logout</span>
       <span ng-if="!isAuthenticated()">Login</span>
     </a>

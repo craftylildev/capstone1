@@ -1,0 +1,86 @@
+/* ------------- VEHICLE ADD ------------- */
+
+.display-view {
+  background-color: #fff;
+  min-height: 550px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.display-view .col-sm-3 {
+  width: 30%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.vehicle-add {
+  background-color: $primary-color;
+  padding: 20px;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+}
+
+.vehicle-drop-down label {
+  color: #fff;
+  font-size: 1.25em;
+}
+
+.vehicle-drop-down select{
+  width: 100%;
+  height: 28px;
+  margin-bottom: 2px;
+  border: none;
+}
+
+.vehicle-add button {
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: bold;
+  padding: 4px;
+  margin-top: 14px;
+  width: 100%;
+}
+
+.vehicle-add button:hover {
+  color: $primary-color;
+}
+
+.vehicle-list {
+  // margin-top: 4px;
+}
+
+.vehicle-list ul {
+  margin: 0;
+  padding: 0;
+}
+
+.vehicle-list li {
+  list-style: none;
+}
+
+.vehicle-list button {
+  margin: 0;
+  width: 100%;  
+  background-color: #000;
+  border:none;
+  color: #fff;
+  padding: 12px;
+  border-bottom: 3px solid $primary-color;
+}
+
+.car-list-text {
+  float: left; 
+  font-weight: bold;
+  font-size: 1.25em; 
+}
+
+.car-list-arrow {
+  float: right;
+}
+
+.vehicle-list button:hover {
+  color: $primary-color;
+}

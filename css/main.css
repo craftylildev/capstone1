@@ -1,3 +1,198 @@
 /* ---------- MAIN ---------- */
+body {
+  background-image: url("/imgs/img-asphalt.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; }
+
+.right {
+  float: right; }
+
+.left {
+  float: left; }
+
+/* ------------- LOGIN ------------- */
+.login-header {
+  background-color: #FF9600;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px 10px 0 0; }
+
+.login-header h1 {
+  font-size: 1.75em;
+  color: #fff;
+  margin: 0; }
+
+.login-header p {
+  color: #fff;
+  margin-top: 6px;
+  margin-bottom: 0; }
+
+.login-logo {
+  margin-bottom: 20px; }
+
+.login-logo img {
+  max-width: 100%; }
+
+.login-bottom {
+  padding: 20px;
+  border: 2px solid #FF9600;
+  border-radius: 0 0 10px 10px;
+  text-align: right;
+  background-color: #fff; }
+
+.login-bottom input {
+  margin-top: 5px; }
+
+.login-btn {
+  background-color: #FF9600;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  margin: 20px 5px 5px 5px;
+  padding: 4px;
+  width: 90px; }
+
+.login-btn:hover {
+  background-color: #DC7303; }
+
+/* ------------- NAV ------------- */
 nav {
-  border-bottom: 1px solid #999; }
+  border-bottom: 3px solid #FF9600;
+  height: 75px;
+  background: #000; }
+
+.logo-small {
+  margin-top: 6px;
+  margin-left: 10px;
+  float: left; }
+
+.logoutArea {
+  float: right; }
+
+.logoutArea a {
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 4px 12px;
+  background: #FF9600;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: bold; }
+
+.logoutArea a:hover {
+  color: #000; }
+
+/* ------------- VEHICLE ADD ------------- */
+.display-view {
+  background-color: #fff;
+  min-height: 550px;
+  margin-left: 0;
+  margin-right: 0; }
+
+.display-view .col-sm-3 {
+  width: 30%;
+  padding-left: 0;
+  padding-right: 0; }
+
+.vehicle-add {
+  background-color: #FF9600;
+  padding: 20px;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000; }
+
+.vehicle-drop-down label {
+  color: #fff;
+  font-size: 1.25em; }
+
+.vehicle-drop-down select {
+  width: 100%;
+  height: 28px;
+  margin-bottom: 2px;
+  border: none; }
+
+.vehicle-add button {
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: bold;
+  padding: 4px;
+  margin-top: 14px;
+  width: 100%; }
+
+.vehicle-add button:hover {
+  color: #FF9600; }
+
+.vehicle-list ul {
+  margin: 0;
+  padding: 0; }
+
+.vehicle-list li {
+  list-style: none; }
+
+.vehicle-list button {
+  margin: 0;
+  width: 100%;
+  background-color: #000;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  border-bottom: 3px solid #FF9600; }
+
+.car-list-text {
+  float: left;
+  font-weight: bold;
+  font-size: 1.25em; }
+
+.car-list-arrow {
+  float: right; }
+
+.vehicle-list button:hover {
+  color: #FF9600; }
+
+/* ------------- VEHICLE DETAILS ------------- */
+.display-view .col-sm-8 {
+  width: 68%; }
+
+.display-view .col-sm-offset-1 {
+  margin-left: 2%; }
+
+.vehicle-details {
+  margin-top: 20px; }
+
+p.no-vehicle-selected {
+  font-size: 1.75em;
+  font-style: italic;
+  color: #999; }
+
+.vehicle-delete-button {
+  margin-top: 6px;
+  padding: 4px 12px;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  float: right; }
+
+button.vehicle-delete-button:hover {
+  color: #FF9600; }
+
+.maintenance-list ul {
+  margin: 0;
+  padding: 0; }
+
+.maintenance-list li {
+  list-style: none;
+  padding: 6px 0 6px 6px;
+  font-weight: bold;
+  font-style: italic;
+  color: #555; }
+
+.maintenance-list li:nth-child(odd) {
+  background-color: #eee; }
+
+.miles {
+  font-size: 1.25em;
+  font-style: normal;
+  color: #000; }

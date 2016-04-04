@@ -1,0 +1,54 @@
+/* ------------- LOGIN ------------- */
+
+.login-header {
+  background-color: $primary-color;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px 10px 0 0;
+}
+
+.login-header h1 {
+  font-size: 1.75em;
+  color: #fff;
+  margin: 0;
+}
+
+.login-header p {
+  color: #fff;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.login-logo {
+  margin-bottom: 20px;
+}
+
+.login-logo img {
+  max-width: 100%;
+}
+
+.login-bottom {
+  padding: 20px;
+  border: 2px solid $primary-color;
+  border-radius: 0 0 10px 10px;
+  text-align: right;
+  background-color: #fff;
+}
+
+.login-bottom input {
+  margin-top: 5px;
+}
+
+.login-btn {
+    background-color: $primary-color;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    margin: 20px 5px 5px 5px;
+    padding: 4px;
+    width: 90px;
+}
+
+.login-btn:hover {
+    background-color: #DC7303;
+}

@@ -1,4 +1,24 @@
+$primary-color: #FF9600;
+
 /* ---------- MAIN ---------- */
-nav {
-  border-bottom: 1px solid #999;
+
+body {
+  background-image: url('/imgs/img-asphalt.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
 }
+
+.right {
+  float:right;
+}
+
+.left {
+  float:left;
+}
+
+
+@import 'login';
+@import 'nav';
+@import 'vehicle-add';
+@import 'vehicle-details';

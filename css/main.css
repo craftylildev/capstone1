@@ -190,7 +190,7 @@ button.vehicle-delete-button:hover {
   color: #555; }
 
 .maintenance-list li:nth-child(odd) {
-  background-color: #eee; }
+  background-color: #eeb; }
 
 .miles {
   font-size: 1.25em;

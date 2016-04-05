@@ -2,10 +2,12 @@
 
 .display-view .col-sm-8 {
   width: 68%;
+  // background-color: #fff;
 }
 
 .display-view .col-sm-offset-1 {
   margin-left: 2%;
+  // background-color: #fff;
 }
 
 .vehicle-details {
@@ -46,7 +48,7 @@ button.vehicle-delete-button:hover {
 }
 
 .maintenance-list li:nth-child(odd) {
-  background-color: #eee;
+  background-color: #eeb;
 }
 
 .miles {

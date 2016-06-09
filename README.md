@@ -1,6 +1,6 @@
 ## GarageTrac
 
-GarageTrac is an application that uses the Edmund's API to allow a user to select a vehicle year, make and model to display that vehicle's suggested maintenance schedule. 
+GarageTrac is an application that uses the [Edmunds API](http://developer.edmunds.com/) to allow a user to select a vehicle year, make and model to display that vehicle's suggested maintenance schedule. 
 
 This project uses technologies I learned in my Front-End course at NSS: AngularJS, Firebase, Sass, Bootstrap, JavaScript, jQuery, HTML5 and CSS.
 
